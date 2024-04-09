@@ -12,10 +12,10 @@ struct EpisodeView: View {
                 
                 ScrollView {
                     ForEach(animeResult, id: \.self){ r in
-                        ResultItemView(test: r).frame(width: 300).padding(.horizontal, 20)
+                        ResultItemView(test: r).frame(width: 350).padding(.horizontal, 20)
                     }
                     Spacer().frame(height: 20)
-                }.frame(width: 400)
+                }.frame(width: 600)
                 
             } else {
                 LoadingView()
