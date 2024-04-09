@@ -95,9 +95,9 @@ class ResultItemViewModel: ObservableObject {
       let minutes = Int(timeInterval / 60)
       let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
       var strSeconds = false;
-        for i in 1 ... 10
+        for i in 1 ... 9
         {
-            if seconds.isMultiple(of: i){
+            if i == seconds {
                 strSeconds = true
             }
         }
