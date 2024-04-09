@@ -69,7 +69,7 @@ class ResultItemViewModel: ObservableObject {
             do {
                 let animeResponse = try JSONDecoder().decode(AnimeResponse.self, from: jsondata)
                 self.animeInfo = animeResponse.data.Media
-                print(animeInfo?.title.romaji)
+                print(animeInfo?.title.romaji as Any)
                 
             } catch {
                 print("Error decoding JSON: \(error)")
@@ -94,6 +94,17 @@ class ResultItemViewModel: ObservableObject {
       let timeInterval = TimeInterval(decimal)
       let minutes = Int(timeInterval / 60)
       let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
+      var strSeconds = false;
+        for i in 1 ... 10
+        {
+            if seconds.isMultiple(of: i){
+                strSeconds = true
+            }
+        }
+        if strSeconds{
+            return String("\(minutes):0\(seconds)")
+        }
+        
       return String("\(minutes):\(seconds)")
     }
 }

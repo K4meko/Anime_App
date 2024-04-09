@@ -44,13 +44,27 @@ struct HomeView: View {
                     }.imagePicker(isPresented: $showCamera, capturedImage: $image)
                     
                         .photosPicker(isPresented: $showPicker🎀, selection: $selectedItem)
+                        .onChange(of: image) { oldvalue, newItem in
+                            Task {
+                                if let data = newItem {
+                                    image = data
+                                    animeInfo.uploadImageToAPI(image: image)
+                                    showEpisodeView🎀 = true
+                                    
+                                    
+                                } else {
+                                    print("Failed to load the image")
+                                }
+                            }
+                        }
+                    
                         .onChange(of: selectedItem) { oldvalue, newItem in
                             Task {
                                 if let data = try? await newItem?.loadTransferable(type: Data.self) {
                                     image = UIImage(data: data)
-                                    animeInfo.uploadImageToAPI(image: image) 
+                                    animeInfo.uploadImageToAPI(image: image)
                                     showEpisodeView🎀 = true
-
+                                    
                                     
                                 } else {
                                     print("Failed to load the image")
@@ -70,11 +84,11 @@ struct HomeView: View {
                 selectedItem = nil
                 selectedImage = nil
             }
-                
-        
+            
+            
         }
-           
     }
+
 }
 
 #Preview {

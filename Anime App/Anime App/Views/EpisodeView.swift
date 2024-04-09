@@ -4,22 +4,24 @@ struct EpisodeView: View {
     @EnvironmentObject var animeInfo: AnimeInfo
 
     var body: some View {
-        if let error = animeInfo.errorProp{
+        if animeInfo.errorProp != nil{
             ErrorView()
         }
-        if let animeResult = animeInfo.AnimeStruct?.result{
-            
-            ScrollView {
-                ForEach(animeResult, id: \.self){ r in
-                    ResultItemView(test: r).frame(width: 300)
-                }
-                Spacer().frame(height: 200)
-            }.frame(width: 360)
-          
-        } else {
-           LoadingView()
+        else{
+            if let animeResult = animeInfo.AnimeStruct?.result{
+                
+                ScrollView {
+                    ForEach(animeResult, id: \.self){ r in
+                        ResultItemView(test: r).frame(width: 300).padding(.horizontal, 20)
+                    }
+                    Spacer().frame(height: 20)
+                }.frame(width: 400)
+                
+            } else {
+                LoadingView()
+            }
         }
-    }
+   }
 }
 
 struct LoadingView: View {

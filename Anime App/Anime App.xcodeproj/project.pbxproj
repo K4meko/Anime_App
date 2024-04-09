@@ -24,9 +24,6 @@
 		EC922AC02B6D116700925A03 /* AnimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC922ABF2B6D116700925A03 /* AnimeModel.swift */; };
 		EC922AC32B6FBC5900925A03 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = EC922AC22B6FBC5900925A03 /* URLImage */; };
 		EC922AC52B6FBC5900925A03 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = EC922AC42B6FBC5900925A03 /* URLImageStore */; };
-		EC922AC82B6FBE9200925A03 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = EC922AC72B6FBE9200925A03 /* SwiftUIIntrospect */; };
-		EC922ACA2B6FBE9200925A03 /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EC922AC92B6FBE9200925A03 /* SwiftUIIntrospect-Dynamic */; };
-		EC922ACC2B6FBE9200925A03 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = EC922ACB2B6FBE9200925A03 /* SwiftUIIntrospect-Static */; };
 		EC9627C82B6BCA9A00F4E899 /* AnimeInfoViewModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9627C72B6BCA9A00F4E899 /* AnimeInfoViewModel .swift */; };
 /* End PBXBuildFile section */
 
@@ -56,9 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC922AC82B6FBE9200925A03 /* SwiftUIIntrospect in Frameworks */,
-				EC922ACA2B6FBE9200925A03 /* SwiftUIIntrospect-Dynamic in Frameworks */,
-				EC922ACC2B6FBE9200925A03 /* SwiftUIIntrospect-Static in Frameworks */,
 				EC922AC52B6FBC5900925A03 /* URLImageStore in Frameworks */,
 				EC922AC32B6FBC5900925A03 /* URLImage in Frameworks */,
 			);
@@ -166,9 +160,6 @@
 			packageProductDependencies = (
 				EC922AC22B6FBC5900925A03 /* URLImage */,
 				EC922AC42B6FBC5900925A03 /* URLImageStore */,
-				EC922AC72B6FBE9200925A03 /* SwiftUIIntrospect */,
-				EC922AC92B6FBE9200925A03 /* SwiftUIIntrospect-Dynamic */,
-				EC922ACB2B6FBE9200925A03 /* SwiftUIIntrospect-Static */,
 			);
 			productName = "Anime App";
 			productReference = EC1C5B742B63BFF200743F18 /* Anime App.app */;
@@ -200,7 +191,6 @@
 			mainGroup = EC1C5B6B2B63BFF200743F18;
 			packageReferences = (
 				EC922AC12B6FBC5900925A03 /* XCRemoteSwiftPackageReference "url-image" */,
-				EC922AC62B6FBE9100925A03 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = EC1C5B752B63BFF200743F18 /* Products */;
 			projectDirPath = "";
@@ -375,6 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Anime App/Preview Content\"";
+				DEVELOPMENT_TEAM = PS2U265K62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Anime-App-Info.plist";
@@ -404,6 +395,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Anime App/Preview Content\"";
+				DEVELOPMENT_TEAM = PS2U265K62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Anime-App-Info.plist";
@@ -457,14 +449,6 @@
 				minimumVersion = 3.1.1;
 			};
 		};
-		EC922AC62B6FBE9100925A03 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.2;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -477,21 +461,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC922AC12B6FBC5900925A03 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImageStore;
-		};
-		EC922AC72B6FBE9200925A03 /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EC922AC62B6FBE9100925A03 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = SwiftUIIntrospect;
-		};
-		EC922AC92B6FBE9200925A03 /* SwiftUIIntrospect-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EC922AC62B6FBE9100925A03 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = "SwiftUIIntrospect-Dynamic";
-		};
-		EC922ACB2B6FBE9200925A03 /* SwiftUIIntrospect-Static */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EC922AC62B6FBE9100925A03 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = "SwiftUIIntrospect-Static";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

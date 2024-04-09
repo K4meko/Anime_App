@@ -44,6 +44,7 @@ struct ResultItemView: View {
                 if let animetitle = viewModel.animeInfo?.title {
                     
                     if let animeTitleEng = animetitle.english
+                        
                     {
                         if !viewModel.checkIfSame(eng: animeTitleEng, romaji: animetitle.romaji) {
                             HStack{
@@ -133,7 +134,7 @@ struct ResultItemView: View {
                     }
                 }
 
-            }.padding(10).background(.purple).foregroundStyle(.white).clipShape(RoundedRectangle(cornerRadius: 10))
+            }.padding(10).background(.purple).foregroundStyle(.white).clipShape(RoundedRectangle(cornerRadius: 10)).padding(.vertical, 15)
             
         .onAppear(perform: {
             Task{

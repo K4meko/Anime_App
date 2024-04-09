@@ -14,7 +14,7 @@ struct Anime_AppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(animeInfo)
+            ContentView().environmentObject(animeInfo).preferredColorScheme(.light)
         }
     }
 }

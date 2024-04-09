@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 class AnimeInfo: ObservableObject {
+    
     @Published var AnimeStruct: AnimeSearchResult?
     @Published var animeInfo: Media?
     @Published var errorProp: String?
@@ -25,20 +26,21 @@ class AnimeInfo: ObservableObject {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print("Error uploading image: \(error)")
-                self.errorProp = String(error.localizedDescription)
+            self.errorProp = String(error.localizedDescription)
             }
-
-            if let data = data {
-                do {
-                    let animeSearchResponse = try JSONDecoder().decode(AnimeSearchResult.self, from: data)
-                    
-                    self.AnimeStruct = animeSearchResponse
-                    print("decoded: \(String(describing: self.AnimeStruct) )")
-                    
-                } catch {
-                    print("Error decoding JSON: \(error)")
-                    self.errorProp = error.localizedDescription
+            DispatchQueue.main.async {
+                if let data = data {
+                    do {
+                        let animeSearchResponse = try JSONDecoder().decode(AnimeSearchResult.self, from: data)
+                        
+                        self.AnimeStruct = animeSearchResponse
+                        print("decoded: \(String(describing: self.AnimeStruct) )")
+                        
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                        //self.errorProp = error.localizedDescription
                     }
+                }
             }
         }.resume()
     }
